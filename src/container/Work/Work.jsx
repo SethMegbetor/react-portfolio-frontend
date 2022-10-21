@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { AppWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -30,10 +30,9 @@ const Work = () => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
       if (item === "All") {
-        setFilterWork(works)
-      }
-      else {
-        setFilterWork(works.filter((work) => work.tags.includes(item)))
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -64,6 +63,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
       >
+
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
